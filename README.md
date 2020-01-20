@@ -1,2 +1,2 @@
-# hey-kitty-girl
-A trivia game for the ultimate RuPaul's Drag Race fans. 
+# Super Queen Trivia
+A trivia game for the ultimate RuPaul's Drag Race fan. 
