@@ -63,7 +63,7 @@
           answerContainers[questionNumber].style.color = 'green';
         }
         // if answer is wrong or blank
-        else{
+        else {
           // color the answers red
           answerContainers[questionNumber].style.color = 'red';
         }
