@@ -1,0 +1,59 @@
+/* Import Open Sans */
+@import
+url(https://fonts.googleapis.com/css?family=Open+Sans&display=swap);
+
+/* Import Bangers */
+@import
+url(https://fonts.googleapis.com/css?family=Bangers&display=swap);
+
+/* Import Montserrat */
+@import
+url(https://fonts.googleapis.com/css?family=Montserrat&display=swap);
+
+body {
+    font-size: 16px;
+    font-family: 'Open Sans';
+    color: #393330;
+    font-weight: 300;
+    text-align: center;
+    background-color: #89DAFF;
+}
+
+h1 {
+    font-family: 'Bangers';
+    font-size: 40px;
+    background-color: #8F95D3;
+}
+
+.question {
+    font-size: 18px;
+    font-family: 'Montserrat';
+    margin-bottom: 10px;
+}
+
+.answers {
+    margin-bottom: 20px;
+    text-align: left;
+    display: inline-block;
+}
+
+.answers label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+button {
+    font-family: 'Montserrat';
+    font-size: 24px;
+    font-weight: 700;
+    background-color: #DBB1BC;
+    border: 0px;
+    border-radius: 3px;
+    padding: 20px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+button:hover {
+    background-color: #8F95D3;
+}
