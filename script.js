@@ -51,7 +51,6 @@
       // if answer is correct
       if (userAnswer === currentQuestion.correctAnswer) {
         // add to the number of correct answers
-        console.log('showGif');
         numCorrect++;
 
         // color the answers green
@@ -67,9 +66,46 @@
     // show number of correct answers out of total
     resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
   }
-  console.log('script works');
+
+  // GIFs
+  function showGif(questionIndex) {
+    let img = document.createElement("img");
+    let gifDiv = document.getElementsByClassName("quiz-container")[0];
+
+    const answerContainers = quizContainer.querySelectorAll(".answers");
+    const answerContainer = answerContainers[questionIndex];
+    const selector = `input[name=question${questionIndex}]:checked`;
+
+    const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+    const correctAnswer = myQuestions[questionIndex].correctAnswer;
+    // is answer correct or wrong
+    if (correctAnswer === userAnswer) {
+      img.setAttribute(
+        "src",
+        "https://media.giphy.com/media/yble1suOGfHJ6/giphy.gif"
+      );
+
+      console.log("correct");
+    } else {
+      img.setAttribute(
+        "src",
+        "https://media.giphy.com/media/3E0Nnz21fcv0XbBXYF/giphy.gif"
+      );
+      console.log("incorrect");
+    }
+    gifDiv.appendChild(img);
+
+    // Hide quiz text while GIF is displayed
+    document.querySelector("#quiz").style.visibility = "hidden";
+
+    setTimeout(() => {
+      gifDiv.removeChild(img);
+      document.querySelector("#quiz").style.visibility = "visible";
+    }, 3000);
+  }
 
   function showSlide(n) {
+    //show text
     slides[currentSlide].classList.remove("active-slide");
     slides[n].classList.add("active-slide");
     currentSlide = n;
@@ -87,35 +123,12 @@
     }
   }
 
- // Install GIFs 
-  function showGif() {
-    let imgCorrect = document.createElement('img');
-    imgCorrect.setAttribute(
-      "src",
-      "https://media.giphy.com/media/yble1suOGfHJ6/giphy.gif"
-    );
-
-    let imgIncorrect = document.createElement('img');
-    imgIncorrect.setAttribute (
-      "src",
-      "https://media.giphy.com/media/3E0Nnz21fcv0XbBXYF/giphy.gif"
-    );
-
-    let correctDiv = document.getElementsByClassName('quiz-container')[0];
-    correctDiv.appendChild(imgCorrect);
-
-    let incorrectDiv = document.getElementsByClassName('quiz-container')[0];
-    incorrectDiv.appendChild(imgIncorrect);
+  function showNextSlide() {
+    showGif(currentSlide);
 
     setTimeout(() => {
-      correctDiv.removeChild(imgCorrect);
-      incorrectDiv.removeChild(imgIncorrect);
-    }, 3500)
-  }
-
-  function showNextSlide() {
-    showSlide(currentSlide + 1);
-    showGif();
+      showSlide(currentSlide + 1);
+    }, 4000);
   }
 
   function showPreviousSlide() {
@@ -150,7 +163,8 @@
     },
 
     {
-      question: "When did Michelle Visage first become a judge on RuPaul’s Drag Race?",
+      question:
+        "When did Michelle Visage first become a judge on RuPaul’s Drag Race?",
       answers: {
         a: "Season 1",
         b: "Season 5",
@@ -195,7 +209,8 @@
     },
 
     {
-      question: "Ru’s catchphrase to the contestants is, “Gentlemen, start your engines...and may the best _____ win!",
+      question:
+        "Ru’s catchphrase to the contestants is, “Gentlemen, start your engines...and may the best _____ win!",
       answers: {
         a: "Boy",
         b: "Woman",
@@ -206,7 +221,8 @@
     },
 
     {
-      question: "Who was the winner of the inaugural series of RuPaul’s Drag Race UK?",
+      question:
+        "Who was the winner of the inaugural series of RuPaul’s Drag Race UK?",
       answers: {
         a: "Gothy Kendall",
         b: "Sum Ting Wong",
