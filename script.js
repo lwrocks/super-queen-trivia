@@ -159,6 +159,61 @@
           d: "Pearl"
         },
         correctAnswer: "a"
+      },
+
+      {
+        question: "Which celebrity HAS NOT been a guest judge on RPDR?",
+        answers: {
+          a: "Jonathan Van Ness (JVN)",
+          b: "Nicole Richie",
+          c: "Geri Halliwell",
+          d: "Lizzo"
+        },
+        correctAnswer: "a"
+      },
+
+      {
+        question: "Ru’s catchphrase to the contestants is, “Gentlemen, start your engines...and may the best _____ win!",
+        answers: {
+          a: "Boy",
+          b: "Woman",
+          c: "Drag Queen",
+          d: "Beauty"
+        },
+        correctAnswer: "b"
+      }, 
+
+      {
+        question: "Who was the winner of the inaugural series of RuPaul’s Drag Race UK?",
+        answers: {
+          a: "Gothy Kendall",
+          b: "Sum Ting Wong",
+          c: "The Vivienne",
+          d: "Divina de Campo"
+        },
+        correctAnswer: "c"
+      },
+
+      {
+        question: "Where is Season 6 contestant Courtney Act from?",
+        answers: {
+          a: "London, England",
+          b: "Chicago, USA",
+          c: "Brisbane, Australia",
+          d: "Berlin, Germany"
+        },
+        correctAnswer: "c"
+      }, 
+
+      {
+        question: "How many times has Shangela competed for the Drag Race crown?",
+        answers: {
+          a: "3",
+          b: "1",
+          c: "4",
+          d: "2"
+        },
+        correctAnswer: "a"
       }
     ];
   
