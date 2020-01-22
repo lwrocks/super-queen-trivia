@@ -1,17 +1,17 @@
 (function() {
   // Functions
   function buildQuiz() {
-    // variable to store the HTML output
+    // Store the HTML output
     const output = [];
 
-    // for each question...
+    // For each question
     myQuestions.forEach((currentQuestion, questionNumber) => {
       // variable to store the list of possible answers
       const answers = [];
 
-      // and for each available answer...
+      // For each available answer
       for (letter in currentQuestion.answers) {
-        // ...add an HTML radio button
+        // Add an HTML radio button
         answers.push(
           `<label>
                 <input type="radio" name="question${questionNumber}" value="${letter}">
@@ -21,7 +21,7 @@
         );
       }
 
-      // add this question and its answers to the output
+      // Add this question and its answers to the output
       output.push(
         `<div class="slide">
               <div class="question"> ${currentQuestion.question} </div>
@@ -30,21 +30,20 @@
       );
     });
 
-    // finally combine our output list into one string of HTML and put it on the page
+    // Combine the output list into one string of HTML and put it on the page
     quizContainer.innerHTML = output.join("");
   }
 
   function showResults() {
-    // gather answer containers from our quiz
+    // Gather answer containers from the quiz
     const answerContainers = quizContainer.querySelectorAll(".answers");
-    console.log(answerContainers);
     
-    // keep track of user's answers
+    // Keep track of user's answers
     let numCorrect = 0;
 
-    // for each question...
+    // For each question...
     myQuestions.forEach((currentQuestion, questionNumber) => {
-      // find selected answer
+      // Find selected answer
       const answerContainer = answerContainers[questionNumber];
       const selector = `input[name=question${questionNumber}]:checked`;
       const userAnswer = (answerContainer.querySelector(selector) || {}).value;
@@ -66,24 +65,27 @@
 
     // show number of correct answers out of total
     resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
-    showFinalResult();
+    showFinalResult(numCorrect);
   }
 
-  function showFinalResult(resultsContainer) {
-    let img = document.createElement("img");
-    let gifDiv = document.getElementsByClassName("quiz-container")[0];
+  function showFinalResult(numCorrect) {
+    const img = document.createElement("img");
+    const gifDiv = document.getElementsByClassName("quiz-container")[0];
+    
     // Show GIF based on final results of quiz
-    if (resultsContainer > 6) {
+    if (numCorrect > 6) {
       img.setAttribute(
         "src",
         "https://media.giphy.com/media/1wrB59GXD8LclkvLQa/giphy.gif"
       );
+      
       console.log("You're a winner baby!");
     } else {
       img.setAttribute(
         "src",
         "https://media.giphy.com/media/cDeEUTOFzXiz6/giphy.gif"
       );
+      
       console.log("Sashay Away");
     }
     gifDiv.appendChild(img);
@@ -94,14 +96,13 @@
     setTimeout(() => {
       gifDiv.removeChild(img);
       document.querySelector("#quiz").style.visibility = "visible";
-    }, 4000);
+    }, 3500);
   }
 
   // GIFs
   function showGif(questionIndex) {
-    let img = document.createElement("img");
-    let gifDiv = document.getElementsByClassName("quiz-container")[0];
-
+    const img = document.createElement("img");
+    const gifDiv = document.getElementsByClassName("quiz-container")[0];
     const answerContainers = quizContainer.querySelectorAll(".answers");
     const answerContainer = answerContainers[questionIndex];
     const selector = `input[name=question${questionIndex}]:checked`;
@@ -132,7 +133,7 @@
     setTimeout(() => {
       gifDiv.removeChild(img);
       document.querySelector("#quiz").style.visibility = "visible";
-    }, 3000);
+    }, 3500);
   }
 
   function showSlide(n) {
@@ -159,7 +160,7 @@
 
     setTimeout(() => {
       showSlide(currentSlide + 1);
-    }, 4000);
+    }, 5000);
   }
 
   function showPreviousSlide() {
