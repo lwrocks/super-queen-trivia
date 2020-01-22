@@ -48,9 +48,9 @@
       const selector = `input[name=question${questionNumber}]:checked`;
       const userAnswer = (answerContainer.querySelector(selector) || {}).value;
 
-      // if answer is correct
+      // If the answer is correct
       if (userAnswer === currentQuestion.correctAnswer) {
-        // add to the number of correct answers
+        // Add to the number of correct answers
         numCorrect++;
 
         // color the answers green
@@ -99,7 +99,7 @@
     }, 3500);
   }
 
-  // GIFs
+  // Main Quiz GIFs
   function showGif(questionIndex) {
     const img = document.createElement("img");
     const gifDiv = document.getElementsByClassName("quiz-container")[0];
@@ -114,7 +114,7 @@
     if (correctAnswer === userAnswer) {
       img.setAttribute(
         "src",
-        "https://media.giphy.com/media/yble1suOGfHJ6/giphy.gif"
+        "https://media.giphy.com/media/MWtyVnSSdejZawpYDs/giphy.gif"
       );
 
       console.log("correct");
