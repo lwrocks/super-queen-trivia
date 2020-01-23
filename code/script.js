@@ -96,7 +96,7 @@
     setTimeout(() => {
       gifDiv.removeChild(img);
       document.querySelector("#quiz").style.visibility = "visible";
-    }, 3500);
+    }, 4500);
   }
 
   // Main Quiz GIFs

@@ -14,7 +14,7 @@ url(https://fonts.googleapis.com/css?family=Montserrat&display=swap);
 body {
     font-size: 16px;
     font-family: 'Open Sans';
-    color: #393330;
+    color: #4D4249;
     font-weight: 300;
     text-align: center;
     background-color: #4D4249;
@@ -45,14 +45,34 @@ body {
     font-size: 22px;
 }
 
+.menu {
+    text-align: left;
+    padding-top: 35px;
+    padding-left: 50px;
+}
+
+.menu-content a {
+    display: inline;
+    padding-right: 30px;
+    color: #59C9C5;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.menu-content a:hover {
+    color: #FF5ED5;
+}
+
 .question {
     font-size: 18px;
-    font-family: 'Montserrat';
+    font-family: 'Open Sans';
+    color: #59C9C5;
     margin-bottom: 10px;
 }
 
 .answers {
     margin-bottom: 20px;
+    color: #59C9C5;
     text-align: left;
     display: inline-block;
 }
@@ -66,19 +86,21 @@ button {
     font-family: 'Montserrat';
     font-size: 24px;
     font-weight: 700;
-    background-color: #DBB1BC;
+    background-color: #D1AC60;
+    color: #4D4249;
     border: 0px;
     border-radius: 3px;
     padding: 20px;
     cursor: pointer;
-    margin-bottom: 20px;
+    margin-bottom: 60px;
 }
 
 button:hover {
-    background-color: #8F95D3;
+    background-color: #FF5ED5;
 }
 
 .btn-start {
+    background-color: #59C9C5;
     margin-top: 7vh;
 }
 
@@ -103,8 +125,14 @@ button:hover {
 
 .quiz-container {
     position: relative;
-    height: 175px;
-    margin-top: 70px;
+    height: 200px;
+    margin-top: 90px;
+}
+
+#results {
+    color: #59C9C5;
+    font-size: 20px;
+    margin-bottom: 30px;
 }
 
 .footer {
@@ -114,6 +142,9 @@ button:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+    align-content: space-between;
     flex-direction: column;
     border-top: 7px solid #59C9C5;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
 }
