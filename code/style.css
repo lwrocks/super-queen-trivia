@@ -17,16 +17,32 @@ body {
     color: #393330;
     font-weight: 300;
     text-align: center;
-    background-color: #89DAFF;
+    background-color: #4D4249;
 }
 
 .header {
-    
+    background-image: url(/images/Super\ Queen\ Trivia\ Background\ Black\ Overlay.jpg);
+    background-size: cover;
+    justify-content: center;
+    height: 95vh;
+    width: 98vw;
+    border-bottom: 7px solid #59C9C5;
 }
 
 .header > h1 {
     font-family: 'Bangers';
-    font-size: 40px;
+    color: #FFF;
+    font-size: 100px;
+    letter-spacing: 3.25px;
+    align-content: center;
+    align-items: center;
+    margin-top: 17vh;
+    text-shadow: 0 0 15px #FF5ED5;
+}
+
+.header > p {
+    color: #FFF;
+    font-size: 22px;
 }
 
 .question {
@@ -62,6 +78,10 @@ button:hover {
     background-color: #8F95D3;
 }
 
+.btn-start {
+    margin-top: 7vh;
+}
+
 .btn-start a {
     text-decoration: none;
 }
@@ -83,6 +103,17 @@ button:hover {
 
 .quiz-container {
     position: relative;
-    height: 200px;
-    margin-top: 40px;
+    height: 175px;
+    margin-top: 70px;
+}
+
+.footer {
+    height: 20vh;
+    background-color: #E5007C;
+    color: #FFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-top: 7px solid #59C9C5;
 }
