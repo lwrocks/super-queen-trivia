@@ -10,6 +10,7 @@ url(https://fonts.googleapis.com/css?family=Bangers&display=swap);
 @import
 url(https://fonts.googleapis.com/css?family=Montserrat&display=swap);
 
+
 body {
     font-size: 16px;
     font-family: 'Open Sans';
@@ -19,10 +20,13 @@ body {
     background-color: #89DAFF;
 }
 
-h1 {
+.header {
+    
+}
+
+.header > h1 {
     font-family: 'Bangers';
     font-size: 40px;
-    background-color: #8F95D3;
 }
 
 .question {
@@ -56,6 +60,10 @@ button {
 
 button:hover {
     background-color: #8F95D3;
+}
+
+.btn-start a {
+    text-decoration: none;
 }
 
 .slide {

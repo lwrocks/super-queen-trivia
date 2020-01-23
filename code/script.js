@@ -37,7 +37,7 @@
   function showResults() {
     // Gather answer containers from the quiz
     const answerContainers = quizContainer.querySelectorAll(".answers");
-    
+
     // Keep track of user's answers
     let numCorrect = 0;
 
@@ -71,21 +71,21 @@
   function showFinalResult(numCorrect) {
     const img = document.createElement("img");
     const gifDiv = document.getElementsByClassName("quiz-container")[0];
-    
+
     // Show GIF based on final results of quiz
     if (numCorrect > 6) {
       img.setAttribute(
         "src",
         "https://media.giphy.com/media/1wrB59GXD8LclkvLQa/giphy.gif"
       );
-      
+
       console.log("You're a winner baby!");
     } else {
       img.setAttribute(
         "src",
         "https://media.giphy.com/media/cDeEUTOFzXiz6/giphy.gif"
       );
-      
+
       console.log("Sashay Away");
     }
     gifDiv.appendChild(img);
@@ -106,10 +106,9 @@
     const answerContainers = quizContainer.querySelectorAll(".answers");
     const answerContainer = answerContainers[questionIndex];
     const selector = `input[name=question${questionIndex}]:checked`;
-
     const userAnswer = (answerContainer.querySelector(selector) || {}).value;
     const correctAnswer = myQuestions[questionIndex].correctAnswer;
-    
+
     // Is the answer right or wrong?
     if (correctAnswer === userAnswer) {
       img.setAttribute(
@@ -133,7 +132,7 @@
     setTimeout(() => {
       gifDiv.removeChild(img);
       document.querySelector("#quiz").style.visibility = "visible";
-    }, 3500);
+    }, 5000);
   }
 
   function showSlide(n) {
@@ -157,7 +156,7 @@
 
   function showNextSlide() {
     showGif(currentSlide);
-
+    
     setTimeout(() => {
       showSlide(currentSlide + 1);
     }, 5000);
@@ -195,7 +194,8 @@
     },
 
     {
-      question: "When did Michelle Visage first become a judge on RuPaul’s Drag Race?",
+      question:
+        "When did Michelle Visage first become a judge on RuPaul’s Drag Race?",
       answers: {
         a: "Season 1",
         b: "Season 5",
@@ -217,7 +217,8 @@
     },
 
     {
-      question: "Which queen holds the dubious honor of being the only contestant to ever be disqualified from RPDR?",
+      question:
+        "Which queen holds the dubious honor of being the only contestant to ever be disqualified from RPDR?",
       answers: {
         a: "Willam",
         b: "Bianca Del Rio",
@@ -239,7 +240,8 @@
     },
 
     {
-      question: "Ru’s catchphrase to the contestants is, “Gentlemen, start your engines...and may the best _____ win!",
+      question:
+        "Ru’s catchphrase to the contestants is, “Gentlemen, start your engines...and may the best _____ win!",
       answers: {
         a: "Boy",
         b: "Woman",
@@ -250,7 +252,8 @@
     },
 
     {
-      question: "Who was the winner of the inaugural series of RuPaul’s Drag Race UK?",
+      question:
+        "Who was the winner of the inaugural series of RuPaul’s Drag Race UK?",
       answers: {
         a: "Gothy Kendall",
         b: "Sum Ting Wong",
